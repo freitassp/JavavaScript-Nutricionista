@@ -10,19 +10,29 @@ var titulo = document.querySelector(".titulo");
 
 
  var tdImc = primeiroPaciente.querySelector(".info-imc");
- var imc = peso/ (altura*altura);
-     tdImc.textContent = imc
-
-     
-     
-
- console.log(primeiroPaciente);//tr
- console.log(tdPeso);//td q contem peso
- console.log(peso);//conteudo da td
- console.log(altura);//conteudo td altura
- console.log(imc)
-
  
+
+  var pesoValido = true;
+  var alturaValida = true;   
+     
+
+if(peso <= 0 || peso >= 1000 ){
+        console.log("Peso Invalido");
+        pesoValido = false;
+        tdImc.textContent = "Peso Invalido!";
+        
+}
+if(altura <= 0 || altura >= 3.00){
+        console.log("altura Invalida");
+        alturaValida = false;
+        tdImc.textContent = "Altura Invalida!";
+      
+}
+
+ if(pesoValido && alturaValida){
+        var imc = peso/ (altura*altura);
+        tdImc.textContent = imc;    
+ }
  
 
        
