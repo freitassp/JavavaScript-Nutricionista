@@ -3,7 +3,7 @@ var titulo = document.querySelector(".titulo");
 titulo.textContent = "Sistema Nutricionista";
     
  var pacientes = document.querySelectorAll(".paciente");
- console.log(pacientes);
+ //console.log(pacientes);
 
  for(var i=0; i<pacientes.length; i++){
 
@@ -76,7 +76,8 @@ botaoAdicionar.addEventListener("click",function(event){
         pacienteTr.appendChild(alturaTd);
         pacienteTr.appendChild(gorduraTd);
        
-
+        var tabela =document.querySelector("#tabela-pacientes");
+        tabela.appendChild(pacienteTr);
        
        
         
