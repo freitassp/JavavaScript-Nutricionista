@@ -8,10 +8,11 @@ botaoAdicionar.addEventListener("click",function(event){
 
        //cria a tr e a td do pacientehg
         var pacienteTr = montaTr(paciente);
+
         //adicionando paciente na tabela
         var tabela =document.querySelector("#tabela-pacientes");
         tabela.appendChild(pacienteTr);
-       
+        form.reset();
        
         
 });
@@ -34,7 +35,7 @@ function obtemPacienteFormulario(form){
 function montaTr(paciente){
 
     var pacienteTr = document.createElement("tr");
-
+    pacienteTr.classList.add("paciente");
     
     var nomeTd = document.createElement("td"); 
     var pesoTd = document.createElement("td"); 
@@ -56,5 +57,13 @@ function montaTr(paciente){
     pacienteTr.appendChild(imcTd);
 
     return pacienteTr;
+
+}
+
+function montaTd(dado, classe){
+    var td = createElement("td");
+    td.textContent = dado;
+    td.classList.add(classe);
+    return td;
 
 }
