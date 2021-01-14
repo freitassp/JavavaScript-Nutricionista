@@ -19,11 +19,11 @@ titulo.textContent = "Sistema Nutricionista";
  var tdImc = paciente.querySelector(".info-imc");
  
 
-  var pesoValido = true;
-  var alturaValida = true;   
+ var pesoValido = validaPeso(peso);
+ var alturaValida = validaAltura(altura);   
      
 
-if(peso <= 0 || peso >= 1000 ){
+if(!pesoValido ){//sinal de negaçao para ver se peso é invalido
         console.log("Peso Invalido");
         pesoValido = false;
         tdImc.textContent = "Peso Invalido!";
@@ -31,7 +31,7 @@ if(peso <= 0 || peso >= 1000 ){
         paciente.classList.add("paciente-invalido");
         
 }
-if(altura <= 0 || altura >= 3.00){
+if(!alturaValida){
         console.log("altura Invalida");
         alturaValida = false;
         tdImc.textContent = "Altura Invalida!";
@@ -53,8 +53,21 @@ function calculaImc(peso,altura){
         return imc.toFixed(2);
 }
 
+function validaPeso(peso){
+        if(peso >=0 && peso <=1000){
+                return true;
+        } else {
+                return false;
+        }   
+}
 
-
+function validaAltura(altura){
+        if(altura >0 && altura <= 3.00){
+                return true;
+        }else{
+                return false;
+        }
+}
 
 
 
