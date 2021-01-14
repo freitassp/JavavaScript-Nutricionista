@@ -3,7 +3,7 @@ var titulo = document.querySelector(".titulo");
 titulo.textContent = "Sistema Nutricionista";
     
  var pacientes = document.querySelectorAll(".paciente");
- //console.log(pacientes);
+ console.log(pacientes);
 
  for(var i=0; i<pacientes.length; i++){
 
