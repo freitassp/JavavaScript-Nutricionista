@@ -31,6 +31,7 @@ if(!pesoValido ){//sinal de negaçao para ver se peso é invalido
         paciente.classList.add("paciente-invalido");
         
 }
+
 if(!alturaValida){
         console.log("altura Invalida");
         alturaValida = false;
@@ -47,12 +48,6 @@ if(!alturaValida){
 }       
 
 
-function calculaImc(peso,altura){
-        var imc = 0;
-        imc = peso / (altura*altura);
-        return imc.toFixed(2);
-}
-
 function validaPeso(peso){
         if(peso >=0 && peso <=1000){
                 return true;
@@ -68,6 +63,14 @@ function validaAltura(altura){
                 return false;
         }
 }
+
+function calculaImc(peso,altura){
+        var imc = 0;
+        imc = peso / (altura*altura);
+        return imc.toFixed(2);
+}
+
+
 
 
 

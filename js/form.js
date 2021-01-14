@@ -6,22 +6,19 @@ botaoAdicionar.addEventListener("click",function(event){
         //extraindo informacoes do paciente do form
     var paciente = obtemPacienteFormulario(form);
 
-       //cria a tr e a td do pacientehg
-<<<<<<< HEAD
+       //cria a tr e a td do paciente e valida
     var pacienteTr =  montaTr(paciente);
+
+    if(!validaPaciente(paciente)){
+        console.log("Paciente Inválido");
+        return; //esse return se ele for executado faz com que saia da função sem adicionar meu paciente
+    }
+
         //adicionando paciente na tabela
      var tabela =document.querySelector("#tabela-pacientes");
          tabela.appendChild(pacienteTr);
-=======
-        var pacienteTr = montaTr(paciente);
-
-        //adicionando paciente na tabela
-        var tabela =document.querySelector("#tabela-pacientes");
-        tabela.appendChild(pacienteTr);
-        form.reset();
->>>>>>> b504c2d9c20b9091b38bba9a8d13f5419eee60ea
        
-       //lompando campos formulario
+       //limpando campos formulario
     form.reset();  
 });
 
@@ -44,7 +41,6 @@ function montaTr(paciente){
 
     var pacienteTr = document.createElement("tr");
     pacienteTr.classList.add("paciente");
-<<<<<<< HEAD
 
     pacienteTr.appendChild(montaTd(paciente.nome,"info-nome")); // anexar filho na mae
     pacienteTr.appendChild(montaTd(paciente.peso,"info-peso"));
@@ -61,21 +57,14 @@ function montaTd(dado,classe){
     td.textContent = dado;
     td.classList.add(classe);
 
-=======
-    
-    pacienteTr.appendChild(montaTd(paciente.nome, "info-nome"));
-    pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
-    pacienteTr.appendChild(montaTd(paciente.altura, "info-altura"));
-    pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
-    pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
+    return td;
 
 }
 
-function montaTd(dado, classe){
-    var td = createElement("td");
-    td.textContent = dado;
-    td.classList.add(classe);
->>>>>>> b504c2d9c20b9091b38bba9a8d13f5419eee60ea
-    return td;
-
+function validaPaciente(paciente){
+    if(validaPeso(paciente.peso)){
+        return true;
+    }else{
+        return false;
+    }
 }
