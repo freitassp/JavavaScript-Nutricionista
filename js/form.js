@@ -10,13 +10,11 @@ botaoAdicionar.addEventListener("click",function(event){
     var pacienteTr =  montaTr(paciente);
 
     var erros = validaPaciente(paciente);
+    console.log(erros);
 
     if(erros.length > 0){
-        var mensagemErro = document.querySelector("#mensagem-erro");
-        mensagemErro.textContent = erros;
-        console.log("Paciente Inválido");
-        form.reset();
-        return; //esse return se ele for executado faz com que saia da função sem adicionar meu paciente
+       exibeMensagensDeErro(erros);
+       return; //esse return se ele for executado faz com que saia da função sem adicionar meu paciente
     }
 
         //adicionando paciente na tabela
@@ -26,6 +24,18 @@ botaoAdicionar.addEventListener("click",function(event){
        //limpando campos formulario
     form.reset();  
 });
+
+
+
+function exibeMensagensDeErro(erros){
+    var ul = document.querySelector("#mensagens-erro");
+    erros.forEach(function(erro) {
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    });
+
+}
 
 function obtemPacienteFormulario(form){
 
