@@ -1,5 +1,9 @@
 var pacientes = document.querySelectorAll(".paciente");
 pacientes.forEach(function(paciente){
-    paciente.addEventListener()
+    paciente.addEventListener("dblclick", function(){
+        console.log("Fui clicado com duplo clique");
+        this.remove();
+
+    });
 
 });
