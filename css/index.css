@@ -38,6 +38,12 @@ header .container:before{
 	margin: 0 auto;
 }
 
+#filtro-tabela {
+ margin-bottom: 10px;
+ width: 300px;
+ height: 35px;
+}
+
 section{
 	margin: 2em 0;
 	overflow: hidden;
