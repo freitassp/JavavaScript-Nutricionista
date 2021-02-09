@@ -1,4 +1,4 @@
-var filtroTabela = document.querySelector("#filtro-tabela");
+var filtroTabela = document.querySelector("#filtrar-tabela");
 
 filtroTabela.addEventListener("input", function(){
     
